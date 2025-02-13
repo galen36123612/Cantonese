@@ -4,7 +4,7 @@ import google.generativeai as genai
 app = Flask(__name__)
 
 # 第一步：設定你的 Google Generative AI API Key
-genai.configure(api_key=GEMINI_API_KEY)
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
 # 選擇要使用的模型 (依你的權限及可用模型為準)
 model = genai.GenerativeModel(model_name="gemini-1.5-flash-latest")
